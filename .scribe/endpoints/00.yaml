@@ -1,0 +1,345 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/categories
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Se obtienen todas las categorías'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":6,"name":"Categoria 3","description":"123","created_at":"2026-06-03T01:08:35.000000Z","updated_at":"2026-06-03T01:08:35.000000Z"},{"id":4,"name":"Cultura","description":"","created_at":"2026-06-02T03:28:43.000000Z","updated_at":"2026-06-02T03:28:43.000000Z"},{"id":3,"name":"Deportes","description":"Competencias, maratones y actividades deportivas","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"},{"id":1,"name":"Musica","description":"Conciertos, festivales y espectaculos en vivo","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"},{"id":5,"name":"Prueba","description":"Prueba 1","created_at":"2026-06-03T00:54:01.000000Z","updated_at":"2026-06-03T00:54:01.000000Z"},{"id":2,"name":"Tecnologia","description":"Conferencias, talleres y meetups tecnicos","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/categories
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Se crea una nueva categoría'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: ''
+        required: false
+        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: consequatur
+      description: 'Dolores dolorum amet iste laborum eius est dolor.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/categories/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Se obtiene una categoría por su ID'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"name":"Musica","description":"Conciertos, festivales y espectaculos en vivo","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/events
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Se obtienen todos los eventos'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"category_id":1,"title":"Festival de M\u00fasica Urbana","description":"Evento musical con artistas invitados y escenario principal al aire libre.","date":"12\/06\/2026","location":"Parque Bicentenario, Concepcion","image_res_name":"event_music","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"},{"id":2,"category_id":2,"title":"Congreso de Tecnolog\u00eda Aplicada","description":"Charlas, paneles y talleres sobre desarrollo, IA y arquitectura de software.","date":"28\/07\/2026","location":"Sala de Teatro UCSC, Concepcion","image_res_name":"event_tech","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"},{"id":3,"category_id":3,"title":"Marat\u00f3n de Santiago","description":"Competencia abierta para corredores amateurs y profesionales.","date":"26\/04\/2026","location":"Santiago","image_res_name":"event_sports","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"},{"id":4,"category_id":4,"title":"Evento de Cultura","description":"Una descripcion cualquiera","date":"13\/07\/2026","location":"Santiago, Chile","image_res_name":null,"created_at":"2026-06-03T01:05:50.000000Z","updated_at":"2026-06-03T01:05:50.000000Z"},{"id":5,"category_id":6,"title":"1231","description":"1231231231","date":"13\/08\/2026","location":"Chile","image_res_name":null,"created_at":"2026-06-03T01:09:12.000000Z","updated_at":"2026-06-03T01:09:12.000000Z"}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/events
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Se crea un nuevo evento'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      category_id:
+        custom: []
+        name: category_id
+        description: 'The <code>id</code> of an existing record in the categories table.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      title:
+        custom: []
+        name: title
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: ''
+        required: false
+        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        type: text
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      location:
+        custom: []
+        name: location
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      image_res_name:
+        custom: []
+        name: image_res_name
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      category_id: 17
+      title: consequatur
+      description: 'Dolores dolorum amet iste laborum eius est dolor.'
+      date: consequatur
+      location: consequatur
+      image_res_name: consequatur
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/events/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Se obtiene un evento por su ID'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the event.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"category_id":1,"title":"Festival de M\u00fasica Urbana","description":"Evento musical con artistas invitados y escenario principal al aire libre.","date":"12\/06\/2026","location":"Parque Bicentenario, Concepcion","image_res_name":"event_music","created_at":"2026-06-02T03:17:17.000000Z","updated_at":"2026-06-02T03:17:17.000000Z"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
