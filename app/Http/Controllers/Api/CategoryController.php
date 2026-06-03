@@ -4,19 +4,37 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(): JsonResponse
+    /**
+     * Se obtienen todas las categorías
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index()
     {
         return response()->json(
             Category::query()->orderBy('name')->get()
         );
     }
 
-    public function store(Request $request): JsonResponse
+    /**
+     * Se obtiene una categoría por su ID
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(Category $category)
+    {
+        return response()->json($category);
+    }
+
+    /**
+     * Se crea una nueva categoría
+     * @bodyParam name string
+     * @bodyParam description string
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:categories,name'],
@@ -29,10 +47,5 @@ class CategoryController extends Controller
         ]);
 
         return response()->json($category, 201);
-    }
-
-    public function show(Category $category): JsonResponse
-    {
-        return response()->json($category);
     }
 }

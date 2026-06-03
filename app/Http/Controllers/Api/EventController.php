@@ -3,21 +3,41 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Event;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function index(): JsonResponse
+    /**
+     * Se obtienen todos los eventos
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index()
     {
         return response()->json(
             Event::query()->orderBy('id')->get()
         );
     }
 
-    public function store(Request $request): JsonResponse
+    /**
+     * Se obtiene un evento por su ID
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(Event $event)
+    {
+        return response()->json($event);
+    }
+
+    /**
+     * Se crea un nuevo evento
+     * @bodyParam title string
+     * @bodyParam description text
+     * @bodyParam date string
+     * @bodyParam location string
+     * @bodyParam image_res_name string
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'category_id' => ['required', 'integer', 'exists:categories,id'],
@@ -38,10 +58,5 @@ class EventController extends Controller
         ]);
 
         return response()->json($event, 201);
-    }
-
-    public function show(Event $event): JsonResponse
-    {
-        return response()->json($event);
     }
 }
